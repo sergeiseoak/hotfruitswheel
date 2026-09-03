@@ -48,14 +48,20 @@ const currentPath = Astro.url.pathname;
 </head>
 <body>
   <header class="site-header">
-    <div class="wrap">
-      <a href="/" class="logo">
-        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="15" cy="15" r="14" stroke="#FF8A3D" stroke-width="2"/>
-          <path d="M15 3 L15 15 L24 20" stroke="#FFD23D" stroke-width="2.5" stroke-linecap="round"/>
-        </svg>
-        Hot Fruits Wheel<span class="dot">.</span>
-      </a>
+    <div class="wrap header-inner">
+      <div class="header-left">
+        <a href="/" class="logo">
+          <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="15" cy="15" r="14" stroke="#FF8A3D" stroke-width="2"/>
+            <path d="M15 3 L15 15 L24 20" stroke="#FFD23D" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+          Hot Fruits Wheel<span class="dot">.</span>
+        </a>
+        <a href="/info/" class="header-cta" rel="nofollow sponsored noopener">
+          <svg viewBox="0 0 24 24" fill="none" width="15" height="15"><rect x="2" y="3" width="20" height="18" rx="3" stroke="#1B1035" stroke-width="2"/><circle cx="8" cy="9" r="1.6" fill="#1B1035"/><circle cx="16" cy="9" r="1.6" fill="#1B1035"/><circle cx="12" cy="15" r="1.6" fill="#1B1035"/></svg>
+          Jouer
+        </a>
+      </div>
       <nav class="nav" aria-label="Navigation principale">
         <a href="/" aria-current={currentPath === '/' ? 'page' : undefined}>Accueil</a>
         <a href="/gratuit/" aria-current={currentPath === '/gratuit/' ? 'page' : undefined}>Jouer gratuitement</a>
@@ -68,6 +74,11 @@ const currentPath = Astro.url.pathname;
   <main>
     <slot />
   </main>
+
+  <a href="/info/" class="floating-cta" rel="nofollow sponsored noopener">
+    <svg class="floating-icon" viewBox="0 0 24 24" fill="none" width="20" height="20"><rect x="2" y="3" width="20" height="18" rx="3" stroke="#1B1035" stroke-width="2"/><circle cx="8" cy="9" r="1.6" fill="#1B1035"/><circle cx="16" cy="9" r="1.6" fill="#1B1035"/><circle cx="12" cy="15" r="1.6" fill="#1B1035"/></svg>
+    <span class="floating-text">Jouer sur 1xCasino</span>
+  </a>
 
   <footer class="site-footer">
     <div class="wrap">

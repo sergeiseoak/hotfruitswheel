@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import WheelHero from '../components/WheelHero.astro';
+import SlotMachine from '../components/SlotMachine.astro';
+import PromoBanner from '../components/PromoBanner.astro';
 import RelatedLinks from '../components/RelatedLinks.astro';
 import { getEntry } from 'astro:content';
 
@@ -22,29 +23,55 @@ const { Content } = await page.render();
           Bonus Wheel et bonnes pratiques avant de jouer.
         </p>
         <div class="hero-actions">
-          <a href="/info/" class="btn" rel="nofollow sponsored noopener">Voir {page.data.game} sur {page.data.brand}</a>
           <a href="/gratuit/" class="btn ghost">Essayer en mode gratuit</a>
         </div>
       </div>
-      <WheelHero />
+      <SlotMachine />
     </div>
   </section>
 
   <section class="section">
-    <div class="wrap">
-      <div class="prose">
-        <Content />
-      </div>
-      <a href="/info/" class="btn cta-bottom" rel="nofollow sponsored noopener">Voir {page.data.game} sur {page.data.brand}</a>
+    <div class="wrap article-layout">
+      <div class="article-main">
+        <PromoBanner
+          title={`${page.data.game} vous intéresse ?`}
+          subtitle={`Retrouvez-le dès maintenant dans le catalogue ${page.data.brand}.`}
+          accent="mango"
+        />
 
-      <RelatedLinks
-        title="À lire aussi"
-        links={[
-          { href: '/gratuit/', label: 'Tester Hot Fruits Wheel en mode gratuit', accent: 'cherry' },
-          { href: '/versions-amatic/', label: 'Les différentes versions du jeu Amatic', accent: 'lime' },
-          { href: '/comment-jouer/', label: 'Comment jouer à Hot Fruits Wheel', accent: 'lemon' },
-        ]}
-      />
+        <div class="prose">
+          <Content />
+        </div>
+
+        <PromoBanner
+          title="Prêt à découvrir le jeu ?"
+          subtitle={`Consultez ${page.data.game} dans le catalogue ${page.data.brand}.`}
+          accent="cherry"
+        />
+
+        <RelatedLinks
+          title="À lire aussi"
+          links={[
+            { href: '/gratuit/', label: 'Tester Hot Fruits Wheel en mode gratuit', accent: 'cherry' },
+            { href: '/versions-amatic/', label: 'Les différentes versions du jeu Amatic', accent: 'lime' },
+            { href: '/comment-jouer/', label: 'Comment jouer à Hot Fruits Wheel', accent: 'lemon' },
+          ]}
+        />
+      </div>
+
+      <aside class="article-sidebar">
+        <div class="sidebar-card">
+          <SlotMachine size="medium" />
+        </div>
+        <div class="sidebar-card">
+          <h3>Guides liés</h3>
+          <ul class="sidebar-links">
+            <li><a href="/gratuit/">Mode gratuit / démo</a></li>
+            <li><a href="/versions-amatic/">Versions Amatic</a></li>
+            <li><a href="/comment-jouer/">Comment jouer</a></li>
+          </ul>
+        </div>
+      </aside>
     </div>
   </section>
 </BaseLayout>
@@ -56,21 +83,4 @@ const { Content } = await page.render();
   .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
 
   @media (max-width: 820px) { .hero-grid { grid-template-columns: 1fr; } }
-
-  .prose table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 1.4em 0;
-    font-size: 0.92rem;
-  }
-  .prose th, .prose td {
-    text-align: left;
-    padding: 10px 14px;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
-  }
-  .prose th { color: var(--text-light); font-family: var(--font-display); }
-  .prose a { color: var(--lemon); text-decoration: underline; text-underline-offset: 3px; }
-  .prose a:hover { color: var(--mango); }
-
-  .cta-bottom { margin-top: 32px; }
 </style>

@@ -1,38 +1,63 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import RelatedLinks from '../../components/RelatedLinks.astro';
+import SlotMachine from '../../components/SlotMachine.astro';
+import PromoBanner from '../../components/PromoBanner.astro';
+import { getEntry } from 'astro:content';
+
+const page = await getEntry('pages', 'versions-amatic');
+if (!page) throw new Error('Missing src/content/pages/versions-amatic.md');
+const { Content } = await page.render();
 ---
 <BaseLayout
-  title="Versions et éditions Amatic — Hot Fruits Wheel"
-  description="Panorama des différentes versions et éditions des jeux Amatic Industries, dont Hot Fruits Wheel 10 et 20."
+  title={page.data.metaTitle}
+  description={page.data.metaDescription}
   path="/versions-amatic/"
 >
   <section class="section">
-    <div class="wrap prose-wrap">
-      <h1>Versions et éditions du jeu Amatic</h1>
-      <p class="lead">
-        Contenu à venir — cette page comparera les différentes éditions (Hot Fruits Wheel 10, 20, etc.).
-      </p>
-      <div class="prose">
-        <p>
-          Envoyez le contenu de cette page pour que Claude la remplace par le vrai texte, avec le
-          même design que le reste du site.
-        </p>
+    <div class="wrap article-layout">
+      <div class="article-main">
+        <h1>{page.data.h1}</h1>
+
+        <PromoBanner
+          title={`Découvrez la version proposée par ${page.data.brand}`}
+          subtitle="Vérifiez directement dans le catalogue quelle édition est disponible."
+          accent="lemon"
+        />
+
+        <div class="prose">
+          <Content />
+        </div>
+
+        <PromoBanner
+          title={`Envie de voir ${page.data.game} en action ?`}
+          subtitle={`Ouvrez le catalogue ${page.data.brand}.`}
+          accent="cherry"
+        />
+
+        <RelatedLinks
+          title="À lire aussi"
+          links={[
+            { href: '/', label: `← ${page.data.game} sur ${page.data.brand} : le guide complet`, accent: 'mango' },
+            { href: '/gratuit/', label: 'Tester Hot Fruits Wheel en mode gratuit', accent: 'cherry' },
+            { href: '/comment-jouer/', label: 'Comment jouer à Hot Fruits Wheel', accent: 'lemon' },
+          ]}
+        />
       </div>
 
-      <RelatedLinks
-        title="À lire aussi"
-        links={[
-          { href: '/', label: '← Hot Fruits Wheel sur 1xCasino : le guide complet', accent: 'mango' },
-          { href: '/gratuit/', label: 'Tester Hot Fruits Wheel en mode gratuit', accent: 'cherry' },
-          { href: '/comment-jouer/', label: 'Comment jouer à Hot Fruits Wheel', accent: 'lemon' },
-        ]}
-      />
+      <aside class="article-sidebar">
+        <div class="sidebar-card">
+          <SlotMachine size="medium" />
+        </div>
+        <div class="sidebar-card">
+          <h3>Guides liés</h3>
+          <ul class="sidebar-links">
+            <li><a href="/">Le guide complet</a></li>
+            <li><a href="/gratuit/">Mode gratuit / démo</a></li>
+            <li><a href="/comment-jouer/">Comment jouer</a></li>
+          </ul>
+        </div>
+      </aside>
     </div>
   </section>
 </BaseLayout>
-
-<style>
-  .prose-wrap { max-width: 700px; }
-  .lead { font-size: 1.05rem; }
-</style>

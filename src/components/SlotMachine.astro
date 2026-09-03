@@ -1,0 +1,317 @@
+---
+interface Props {
+  href?: string;
+  size?: 'large' | 'medium';
+}
+const { href = '/info/', size = 'large' } = Astro.props;
+---
+<a href={href} class={`machine-link ${size}`} rel="nofollow sponsored noopener" aria-label="Jouer à Hot Fruits Wheel sur 1xCasino">
+  <div class="cabinet">
+    <div class="marquee">
+      <span class="bulb" style="--i:0"></span><span class="bulb" style="--i:1"></span>
+      <span class="bulb" style="--i:2"></span><span class="bulb" style="--i:3"></span>
+      <span class="bulb" style="--i:4"></span><span class="bulb" style="--i:5"></span>
+      <span class="marquee-text">HOT FRUITS WHEEL</span>
+      <span class="bulb" style="--i:6"></span><span class="bulb" style="--i:7"></span>
+      <span class="bulb" style="--i:8"></span><span class="bulb" style="--i:9"></span>
+      <span class="bulb" style="--i:10"></span><span class="bulb" style="--i:11"></span>
+    </div>
+
+    <div class="screen">
+      <div class="wheel-badge">
+        <svg viewBox="0 0 100 100" class="mini-wheel">
+          <circle cx="50" cy="50" r="46" fill="none" stroke="#FFD23D" stroke-width="4"/>
+          <path d="M50 50 L50 4 A46 46 0 0 1 89 27 Z" fill="#FF8A3D"/>
+          <path d="M50 50 L89 27 A46 46 0 0 1 89 73 Z" fill="#FF4D6D"/>
+          <path d="M50 50 L89 73 A46 46 0 0 1 50 96 Z" fill="#B4E23C"/>
+          <path d="M50 50 L50 96 A46 46 0 0 1 11 73 Z" fill="#FFD23D"/>
+          <path d="M50 50 L11 73 A46 46 0 0 1 11 27 Z" fill="#FF8A3D"/>
+          <path d="M50 50 L11 27 A46 46 0 0 1 50 4 Z" fill="#FF4D6D"/>
+          <circle cx="50" cy="50" r="14" fill="#1B1035" stroke="#FFD23D" stroke-width="2"/>
+        </svg>
+        <span class="badge-label">BONUS<br/>WHEEL</span>
+      </div>
+
+      <div class="reels">
+        <div class="reel">
+          <div class="symbol dim">
+            <svg viewBox="0 0 40 40"><defs><radialGradient id="lemon" cx="35%" cy="30%"><stop offset="0%" stop-color="#FFF4B0"/><stop offset="100%" stop-color="#E8B800"/></radialGradient></defs>
+              <ellipse cx="20" cy="20" rx="15" ry="11" fill="url(#lemon)" transform="rotate(-15 20 20)"/>
+              <ellipse cx="15" cy="15" rx="4" ry="2.5" fill="#FFFBE0" opacity="0.7" transform="rotate(-15 15 15)"/>
+            </svg>
+          </div>
+          <div class="symbol lit">
+            <svg viewBox="0 0 40 40"><defs><radialGradient id="cherry1" cx="35%" cy="30%"><stop offset="0%" stop-color="#FF6B85"/><stop offset="100%" stop-color="#B0104A"/></radialGradient></defs>
+              <path d="M20 14 C18 6, 26 3, 28 1" stroke="#4F7A2E" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <ellipse cx="8" cy="8" rx="3.5" ry="5" fill="#4F7A2E" transform="rotate(20 8 8)"/>
+              <circle cx="14" cy="26" r="9" fill="url(#cherry1)"/>
+              <circle cx="27" cy="26" r="9" fill="url(#cherry1)"/>
+              <ellipse cx="11" cy="22" rx="2" ry="1.2" fill="#fff" opacity="0.6"/>
+              <ellipse cx="24" cy="22" rx="2" ry="1.2" fill="#fff" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="symbol dim">
+            <svg viewBox="0 0 40 40"><path d="M20 4 L24 15 L36 15 L26 22 L30 34 L20 27 L10 34 L14 22 L4 15 L16 15 Z" fill="#FFD23D"/></svg>
+          </div>
+        </div>
+        <div class="reel">
+          <div class="symbol dim">
+            <svg viewBox="0 0 40 40"><defs><radialGradient id="grape" cx="35%" cy="30%"><stop offset="0%" stop-color="#B48CF0"/><stop offset="100%" stop-color="#6E44B8"/></radialGradient></defs>
+              <circle cx="14" cy="14" r="6" fill="url(#grape)"/><circle cx="26" cy="14" r="6" fill="url(#grape)"/>
+              <circle cx="10" cy="24" r="6" fill="url(#grape)"/><circle cx="20" cy="26" r="6" fill="url(#grape)"/><circle cx="30" cy="24" r="6" fill="url(#grape)"/>
+            </svg>
+          </div>
+          <div class="symbol lit">
+            <svg viewBox="0 0 40 40"><defs><radialGradient id="cherry2" cx="35%" cy="30%"><stop offset="0%" stop-color="#FF6B85"/><stop offset="100%" stop-color="#B0104A"/></radialGradient></defs>
+              <path d="M20 14 C18 6, 26 3, 28 1" stroke="#4F7A2E" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <circle cx="14" cy="26" r="9" fill="url(#cherry2)"/>
+              <circle cx="27" cy="26" r="9" fill="url(#cherry2)"/>
+              <ellipse cx="11" cy="22" rx="2" ry="1.2" fill="#fff" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="symbol dim">
+            <svg viewBox="0 0 40 40"><defs><linearGradient id="bell" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#FFE873"/><stop offset="100%" stop-color="#D6A400"/></linearGradient></defs>
+              <path d="M20 6 C13 6 12 14 11 20 C10 26 6 27 6 29 L34 29 C34 27 30 26 29 20 C28 14 27 6 20 6 Z" fill="url(#bell)"/>
+              <circle cx="20" cy="33" r="3" fill="#D6A400"/>
+              <rect x="18" y="3" width="4" height="4" rx="1" fill="#D6A400"/>
+            </svg>
+          </div>
+        </div>
+        <div class="reel">
+          <div class="symbol dim">
+            <svg viewBox="0 0 40 40"><path d="M6 16 A14 14 0 0 1 34 16 Z" fill="#3FA34D"/><path d="M8 17 A12 12 0 0 0 32 17 Z" fill="#FFF6E0"/>
+              <circle cx="14" cy="20" r="1.4" fill="#2A1854"/><circle cx="20" cy="22" r="1.4" fill="#2A1854"/><circle cx="26" cy="20" r="1.4" fill="#2A1854"/>
+            </svg>
+          </div>
+          <div class="symbol lit">
+            <svg viewBox="0 0 40 40"><defs><radialGradient id="cherry3" cx="35%" cy="30%"><stop offset="0%" stop-color="#FF6B85"/><stop offset="100%" stop-color="#B0104A"/></radialGradient></defs>
+              <path d="M20 14 C18 6, 26 3, 28 1" stroke="#4F7A2E" stroke-width="2" fill="none" stroke-linecap="round"/>
+              <circle cx="14" cy="26" r="9" fill="url(#cherry3)"/>
+              <circle cx="27" cy="26" r="9" fill="url(#cherry3)"/>
+              <ellipse cx="24" cy="22" rx="2" ry="1.2" fill="#fff" opacity="0.6"/>
+            </svg>
+          </div>
+          <div class="symbol dim">
+            <svg viewBox="0 0 40 40"><rect x="4" y="10" width="32" height="20" rx="4" fill="#B0104A"/>
+              <text x="20" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="800" fill="#FFD23D" text-anchor="middle">7</text>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <div class="payline"></div>
+    </div>
+
+    <div class="panel">
+      <div class="readout">
+        <span class="readout-label">MISE</span>
+        <span class="readout-value">1.00</span>
+      </div>
+      <div class="spin-wrap">
+        <div class="spin-btn">SPIN</div>
+      </div>
+      <div class="readout">
+        <span class="readout-label">SOLDE</span>
+        <span class="readout-value">50.00</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-flag">
+    <svg class="flag-icon" viewBox="0 0 24 24" fill="none"><rect x="2" y="3" width="20" height="18" rx="3" stroke="#1B1035" stroke-width="2"/><circle cx="8" cy="9" r="1.6" fill="#1B1035"/><circle cx="16" cy="9" r="1.6" fill="#1B1035"/><circle cx="12" cy="15" r="1.6" fill="#1B1035"/></svg>
+    Jouer sur 1xCasino →
+  </div>
+</a>
+
+<style>
+  .machine-link {
+    display: block;
+    max-width: 420px;
+    margin: 0 auto;
+    text-decoration: none;
+    transition: transform 0.25s ease;
+  }
+  .machine-link:hover { transform: translateY(-4px) scale(1.015); }
+  .machine-link.medium { max-width: 300px; }
+
+  .cabinet {
+    background: linear-gradient(160deg, #3A2270 0%, #1B1035 70%);
+    border-radius: 26px;
+    padding: 16px 16px 20px;
+    border: 3px solid #5A3AA0;
+    box-shadow:
+      0 20px 50px rgba(0,0,0,0.45),
+      inset 0 2px 0 rgba(255,255,255,0.08);
+    position: relative;
+  }
+
+  .marquee {
+    background: linear-gradient(180deg, #FF4D6D, #B0104A);
+    border-radius: 14px;
+    padding: 8px 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 12px;
+    position: relative;
+    box-shadow: inset 0 2px 4px rgba(255,255,255,0.25), inset 0 -3px 6px rgba(0,0,0,0.3);
+  }
+  .marquee-text {
+    font-family: var(--font-display);
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    color: #FFF5D9;
+    font-size: 0.95rem;
+    text-shadow: 0 0 8px rgba(255, 210, 61, 0.8), 0 2px 0 rgba(0,0,0,0.3);
+    padding: 0 6px;
+  }
+  .bulb {
+    width: 6px; height: 6px; border-radius: 50%;
+    background: #FFD23D;
+    box-shadow: 0 0 6px 2px rgba(255,210,61,0.9);
+    animation: bulb-pulse 1.4s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.09s);
+  }
+  @keyframes bulb-pulse { 0%, 100% { opacity: 0.35; } 50% { opacity: 1; } }
+
+  .screen {
+    background: radial-gradient(circle at 50% 0%, #241448, #100826 80%);
+    border-radius: 16px;
+    padding: 18px 14px 10px;
+    border: 4px solid #14092C;
+    box-shadow: inset 0 6px 18px rgba(0,0,0,0.6);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .wheel-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    z-index: 2;
+  }
+  .mini-wheel { width: 44px; height: 44px; filter: drop-shadow(0 2px 6px rgba(0,0,0,0.5)); }
+  .badge-label {
+    font-family: var(--font-display);
+    font-size: 0.5rem;
+    font-weight: 800;
+    color: var(--lemon);
+    text-align: center;
+    line-height: 1.1;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.6);
+  }
+
+  .reels {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+  }
+  .reel {
+    background: linear-gradient(180deg, #12082A, #1E1040);
+    border-radius: 10px;
+    padding: 6px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    border: 2px solid #3A2270;
+  }
+  .symbol {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+  }
+  .symbol svg { width: auto; height: 100%; max-width: 100%; display: block; filter: drop-shadow(0 2px 3px rgba(0,0,0,0.4)); }
+  .symbol.dim { opacity: 0.4; }
+  .symbol.lit {
+    background: rgba(255, 210, 61, 0.12);
+    border-radius: 6px;
+    filter: drop-shadow(0 0 6px rgba(255,210,61,0.5));
+  }
+  .payline {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    top: 50%;
+    height: 2px;
+    background: repeating-linear-gradient(90deg, var(--lemon) 0 6px, transparent 6px 11px);
+    transform: translateY(4px);
+    opacity: 0.8;
+  }
+
+  .panel {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: center;
+    gap: 10px;
+  }
+  .readout {
+    background: #0F0824;
+    border-radius: 8px;
+    padding: 6px 8px;
+    text-align: center;
+    border: 1px solid #3A2270;
+  }
+  .readout-label {
+    display: block;
+    font-size: 0.55rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    font-weight: 700;
+  }
+  .readout-value {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--lime);
+    font-size: 0.9rem;
+  }
+  .spin-wrap { display: flex; justify-content: center; }
+  .spin-btn {
+    width: 62px; height: 62px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #FF7A5C, #D6203F 65%, #8C0F28);
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--font-display);
+    font-weight: 800;
+    color: #FFF5D9;
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    box-shadow: 0 6px 0 #6B0C1F, 0 8px 16px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.35);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .machine-link:hover .spin-btn {
+    transform: translateY(2px);
+    box-shadow: 0 4px 0 #6B0C1F, 0 6px 12px rgba(0,0,0,0.5), inset 0 2px 4px rgba(255,255,255,0.35);
+  }
+
+  .cta-flag {
+    text-align: center;
+    margin-top: 14px;
+    font-family: var(--font-display);
+    font-weight: 700;
+    color: var(--base-900);
+    background: linear-gradient(90deg, var(--lemon), var(--mango));
+    border-radius: 999px;
+    padding: 10px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 0 6px 16px rgba(255, 138, 61, 0.35);
+  }
+  .flag-icon { width: 18px; height: 18px; flex-shrink: 0; }
+
+  @media (max-width: 420px) {
+    .machine-link { max-width: 320px; }
+    .symbol { font-size: 1.4rem; }
+  }
+</style>

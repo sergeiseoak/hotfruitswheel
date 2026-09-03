@@ -1,0 +1,10 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#1B1035"/>
+  <circle cx="960" cy="180" r="280" fill="#2A1854"/>
+  <circle cx="960" cy="180" r="90" fill="#FF8A3D"/>
+  <circle cx="820" cy="120" r="30" fill="#FF4D6D"/>
+  <circle cx="1080" cy="260" r="34" fill="#B4E23C"/>
+  <circle cx="1050" cy="90" r="26" fill="#FFD23D"/>
+  <text x="80" y="300" font-family="Arial, sans-serif" font-size="64" font-weight="700" fill="#F7F3FF">Hot Fruits Wheel</text>
+  <text x="80" y="360" font-family="Arial, sans-serif" font-size="30" fill="#C6B9E8">Обзоры площадок и стратегии фруктовых слотов</text>
+</svg>

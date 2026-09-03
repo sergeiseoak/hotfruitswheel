@@ -1,0 +1,76 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import WheelHero from '../components/WheelHero.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import { getEntry } from 'astro:content';
+
+const page = await getEntry('pages', 'index');
+if (!page) throw new Error('Missing src/content/pages/index.md');
+const { Content } = await page.render();
+---
+<BaseLayout
+  title={page.data.metaTitle}
+  description={page.data.metaDescription}
+  path="/"
+>
+  <section class="hero section">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <h1>{page.data.h1}</h1>
+        <p class="lead">
+          Le guide indépendant du jeu {page.data.game} chez {page.data.brand} : mécaniques, symboles,
+          Bonus Wheel et bonnes pratiques avant de jouer.
+        </p>
+        <div class="hero-actions">
+          <a href="/info/" class="btn" rel="nofollow sponsored noopener">Voir {page.data.game} sur {page.data.brand}</a>
+          <a href="/gratuit/" class="btn ghost">Essayer en mode gratuit</a>
+        </div>
+      </div>
+      <WheelHero />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="prose">
+        <Content />
+      </div>
+      <a href="/info/" class="btn cta-bottom" rel="nofollow sponsored noopener">Voir {page.data.game} sur {page.data.brand}</a>
+
+      <RelatedLinks
+        title="À lire aussi"
+        links={[
+          { href: '/gratuit/', label: 'Tester Hot Fruits Wheel en mode gratuit', accent: 'cherry' },
+          { href: '/versions-amatic/', label: 'Les différentes versions du jeu Amatic', accent: 'lime' },
+          { href: '/comment-jouer/', label: 'Comment jouer à Hot Fruits Wheel', accent: 'lemon' },
+        ]}
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .hero-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 40px; align-items: center; }
+  .hero-copy h1 { font-size: clamp(1.7rem, 3.4vw, 2.6rem); max-width: 20ch; }
+  .lead { font-size: 1.05rem; max-width: 48ch; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; margin-top: 8px; }
+
+  @media (max-width: 820px) { .hero-grid { grid-template-columns: 1fr; } }
+
+  .prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.4em 0;
+    font-size: 0.92rem;
+  }
+  .prose th, .prose td {
+    text-align: left;
+    padding: 10px 14px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+  .prose th { color: var(--text-light); font-family: var(--font-display); }
+  .prose a { color: var(--lemon); text-decoration: underline; text-underline-offset: 3px; }
+  .prose a:hover { color: var(--mango); }
+
+  .cta-bottom { margin-top: 32px; }
+</style>

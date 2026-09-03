@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+---
+<BaseLayout
+  title="Tester Hot Fruits Wheel en mode gratuit — Hot Fruits Wheel"
+  description="Comment tester Hot Fruits Wheel en mode gratuit/démo avant de jouer en argent réel sur 1xCasino."
+  path="/gratuit/"
+>
+  <section class="section">
+    <div class="wrap prose-wrap">
+      <h1>Tester Hot Fruits Wheel en mode gratuit</h1>
+      <p class="lead">
+        Contenu à venir — cette page recevra le guide détaillé sur le mode démo de Hot Fruits Wheel.
+      </p>
+      <div class="prose">
+        <p>
+          Envoyez le contenu de cette page (même format que la page d'accueil) pour que Claude la
+          remplace par le vrai texte, avec le même design.
+        </p>
+      </div>
+
+      <RelatedLinks
+        title="À lire aussi"
+        links={[
+          { href: '/', label: '← Hot Fruits Wheel sur 1xCasino : le guide complet', accent: 'mango' },
+          { href: '/versions-amatic/', label: 'Les différentes versions du jeu Amatic', accent: 'lime' },
+          { href: '/comment-jouer/', label: 'Comment jouer à Hot Fruits Wheel', accent: 'lemon' },
+        ]}
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose-wrap { max-width: 700px; }
+  .lead { font-size: 1.05rem; }
+</style>

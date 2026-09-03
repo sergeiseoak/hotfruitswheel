@@ -1,0 +1,38 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import RelatedLinks from '../../components/RelatedLinks.astro';
+---
+<BaseLayout
+  title="Comment jouer à Hot Fruits Wheel — règles et contrôles"
+  description="Guide pas à pas des règles et des contrôles de Hot Fruits Wheel avant votre première partie."
+  path="/comment-jouer/"
+>
+  <section class="section">
+    <div class="wrap prose-wrap">
+      <h1>Comment jouer à Hot Fruits Wheel</h1>
+      <p class="lead">
+        Contenu à venir — cette page détaillera le déroulement d'un tour et les principaux contrôles.
+      </p>
+      <div class="prose">
+        <p>
+          Envoyez le contenu de cette page pour que Claude la remplace par le vrai texte, avec le
+          même design que le reste du site.
+        </p>
+      </div>
+
+      <RelatedLinks
+        title="À lire aussi"
+        links={[
+          { href: '/', label: '← Hot Fruits Wheel sur 1xCasino : le guide complet', accent: 'mango' },
+          { href: '/gratuit/', label: 'Tester Hot Fruits Wheel en mode gratuit', accent: 'cherry' },
+          { href: '/versions-amatic/', label: 'Les différentes versions du jeu Amatic', accent: 'lime' },
+        ]}
+      />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .prose-wrap { max-width: 700px; }
+  .lead { font-size: 1.05rem; }
+</style>

@@ -1,0 +1,66 @@
+---
+// Original geometric illustration built from primitive shapes.
+---
+<div class="wheel-hero" aria-hidden="true">
+  <svg viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg" class="wheel-svg">
+    <g class="wheel-spin">
+      <circle cx="210" cy="210" r="195" fill="none" stroke="#3A2270" stroke-width="2"/>
+      <g>
+        <path d="M210 210 L210 15 A195 195 0 0 1 348 72 Z" fill="#FF8A3D"/>
+        <path d="M210 210 L348 72 A195 195 0 0 1 405 210 Z" fill="#2A1854"/>
+        <path d="M210 210 L405 210 A195 195 0 0 1 348 348 Z" fill="#FF4D6D"/>
+        <path d="M210 210 L348 348 A195 195 0 0 1 210 405 Z" fill="#2A1854"/>
+        <path d="M210 210 L210 405 A195 195 0 0 1 72 348 Z" fill="#B4E23C"/>
+        <path d="M210 210 L72 348 A195 195 0 0 1 15 210 Z" fill="#2A1854"/>
+        <path d="M210 210 L15 210 A195 195 0 0 1 72 72 Z" fill="#FFD23D"/>
+        <path d="M210 210 L72 72 A195 195 0 0 1 210 15 Z" fill="#2A1854"/>
+      </g>
+
+      <g transform="translate(210,90)">
+        <circle cx="-8" cy="10" r="15" fill="#B0104A"/>
+        <circle cx="16" cy="16" r="15" fill="#B0104A"/>
+        <path d="M-8 -5 C -4 -30, 10 -34, 14 -40" stroke="#4F7A2E" stroke-width="3" fill="none" stroke-linecap="round"/>
+      </g>
+      <g transform="translate(330,150)">
+        <ellipse cx="0" cy="0" rx="18" ry="13" fill="#FFE873" transform="rotate(-20)"/>
+      </g>
+      <g transform="translate(330,270)">
+        <circle cx="0" cy="0" r="15" fill="#DDEF6B"/>
+        <circle cx="0" cy="0" r="9" fill="#B4E23C"/>
+      </g>
+      <g transform="translate(210,330)">
+        <circle cx="0" cy="0" r="17" fill="#FFB259"/>
+        <circle cx="0" cy="0" r="9" fill="#FF8A3D"/>
+      </g>
+      <g transform="translate(90,270)">
+        <circle cx="-7" cy="-6" r="8" fill="#8A5FD1"/>
+        <circle cx="8" cy="-6" r="8" fill="#8A5FD1"/>
+        <circle cx="0" cy="7" r="8" fill="#6E44B8"/>
+      </g>
+      <g transform="translate(90,150)">
+        <path d="M0,-16 L4.5,-5 16,-5 6.5,2 10,14 0,7 -10,14 -6.5,2 -16,-5 -4.5,-5 Z" fill="#FFD23D"/>
+      </g>
+    </g>
+
+    <circle cx="210" cy="210" r="34" fill="#1B1035" stroke="#FFD23D" stroke-width="3"/>
+    <path d="M198 210 L210 195 L222 210 L210 225 Z" fill="#FF8A3D"/>
+
+    <path d="M210 0 L222 24 L198 24 Z" fill="#F7F3FF"/>
+  </svg>
+</div>
+
+<style>
+  .wheel-hero { display: flex; justify-content: center; }
+  .wheel-svg { width: 100%; max-width: 380px; height: auto; }
+  .wheel-spin {
+    transform-origin: 210px 210px;
+    animation: spin-once 2.4s cubic-bezier(0.2, 0.7, 0.2, 1) 1;
+  }
+  @keyframes spin-once {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(1080deg); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .wheel-spin { animation: none; }
+  }
+</style>

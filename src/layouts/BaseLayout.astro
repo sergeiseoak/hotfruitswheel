@@ -1,0 +1,87 @@
+---
+import '../styles/global.css';
+
+interface Props {
+  title: string;
+  description: string;
+  path?: string;
+  ogImage?: string;
+}
+
+const { title, description, path = '/', ogImage = '/og-default.svg' } = Astro.props;
+
+// Google Search Console verification: paste the "content" value Google gives you
+// when you choose the "HTML tag" verification method. Leave empty to skip.
+// You get this value from https://search.google.com/search-console -> Add property -> HTML tag
+const GOOGLE_SITE_VERIFICATION = 'sF37jhBEiO77jzYBCpnjXIU9VPJVzEYhVZc_fsa0De8';
+const siteUrl = 'https://hotfruitswheel.com';
+const canonical = new URL(path, siteUrl).toString();
+const currentPath = Astro.url.pathname;
+---
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonical} />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonical} />
+  <meta property="og:image" content={new URL(ogImage, siteUrl).toString()} />
+  <meta property="og:locale" content="fr_TN" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content={title} />
+  <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={new URL(ogImage, siteUrl).toString()} />
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="robots" content="index, follow" />
+  {GOOGLE_SITE_VERIFICATION && (
+    <meta name="google-site-verification" content={GOOGLE_SITE_VERIFICATION} />
+  )}
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <a href="/" class="logo">
+        <svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="15" cy="15" r="14" stroke="#FF8A3D" stroke-width="2"/>
+          <path d="M15 3 L15 15 L24 20" stroke="#FFD23D" stroke-width="2.5" stroke-linecap="round"/>
+        </svg>
+        Hot Fruits Wheel<span class="dot">.</span>
+      </a>
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="/" aria-current={currentPath === '/' ? 'page' : undefined}>Accueil</a>
+        <a href="/gratuit/" aria-current={currentPath === '/gratuit/' ? 'page' : undefined}>Jouer gratuitement</a>
+        <a href="/versions-amatic/" aria-current={currentPath === '/versions-amatic/' ? 'page' : undefined}>Versions Amatic</a>
+        <a href="/comment-jouer/" aria-current={currentPath === '/comment-jouer/' ? 'page' : undefined}>Comment jouer</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <p class="footer-notice">
+        Ce site a un caractère purement informatif et ne constitue pas une incitation à jouer.
+        Il s'adresse à un public majeur (18 ans et plus). Les jeux d'argent peuvent créer une dépendance —
+        jouez de manière responsable et évaluez les risques avant toute décision.
+      </p>
+      <div class="footer-links">
+        <a href="/gratuit/">Mode gratuit</a>
+        <a href="/versions-amatic/">Versions Amatic</a>
+        <a href="/comment-jouer/">Comment jouer</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
